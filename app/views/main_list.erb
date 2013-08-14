@@ -1,0 +1,11 @@
+
+<h4><a href="/create_post" class='new_post_link'>Create a New Post, or whatever...</a></h4>
+
+<ol class='content_list'>
+  <% @posts.each do |post| %>
+
+  <h3><%= post.title %></h3>
+  <p><%= post.body %></p>
+
+  <% end %>
+</ol>
