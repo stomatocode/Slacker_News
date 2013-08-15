@@ -1,0 +1,21 @@
+
+<h1><%= @post.title %></h1> 
+<br>
+<p><%= @post.body %> </p>
+<br>
+
+<h2> <% @comments.each do |comment| %>  </h2>
+<p> <%= comment.user_id %> </p>
+<br>
+<p> <%= comment.content %> </p>
+<% end %>
+<br>
+
+<h2> Go ahead, now's your chance...</h2>
+<form class='comment' method='post' action='/create_comment'>
+  <textarea name='comment[content]' rows='10' cols='50' placeholder='Go ahead, cry about it.'>
+  </textarea>
+
+  <input name='comment[user_id]' type='hidden' value="<%= @post.id %>">
+  <input type='submit' value='Cheese with your whine?'><br>
+</form>

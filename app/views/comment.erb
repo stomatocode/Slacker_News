@@ -1,0 +1,17 @@
+
+
+
+  <h3><%= @post.title %></h3>
+  <h4><%= @post.body %></h4>
+  <br>
+
+
+
+<h2> Go ahead, now's your chance...</h2>
+<form class='comment' method='post' action='/create_comment'>
+  <textarea name='comment[content]' rows='10' cols='50' placeholder='Go ahead, cry about it.'>
+  </textarea>
+
+  <input name='comment[user_id]' type='hidden' value="<%= @post.id %>">
+  <input type='submit' value='Cheese with your whine?'><br>
+</form>
